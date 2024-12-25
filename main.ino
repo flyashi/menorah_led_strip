@@ -8,7 +8,7 @@
 #define MAX 10
 #define MAX_CANDLE 50
 
-#define PIN 12
+#define PIN PB0  // Trinket. Update for your board.
 #define NUM 150
 
 /**              *
@@ -239,12 +239,13 @@ uint32_t colorForIndexAndIter(int index, int iter) {
 void menorahForDay(int day) {
   // first, clear
   uint32_t black = strip.Color(0, 0, 0);
-  for (int i = 0; i < strip.numPixels(); i++) {
+  for (uint16_t i = 0; i < strip.numPixels(); i++) {
     strip.setPixelColor(i, black);
   }
   strip.show();
-  uint32_t colorWhite = strip.Color(MAX, MAX, MAX);
-  uint32_t colorYellow = strip.Color(MAX, MAX * 3 / 5, 0);
+  // unused:
+  // uint32_t colorWhite = strip.Color(MAX, MAX, MAX);
+  // uint32_t colorYellow = strip.Color(MAX, MAX * 3 / 5, 0);
   uint32_t colorRed = strip.Color(MAX_CANDLE, 0, 0);
   uint32_t colorGreen = strip.Color(0, MAX_CANDLE, 0);
   for (int iter = 0; iter < 2000; iter++) {
