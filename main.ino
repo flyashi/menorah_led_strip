@@ -8,7 +8,7 @@
 #define MAX 10
 #define MAX_CANDLE 50
 
-#define PIN PB0  // Trinket. Update for your board.
+#define PIN 6
 #define NUM 150
 
 /**              *
